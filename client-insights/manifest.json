@@ -1,0 +1,12 @@
+{
+  "name": "Scan The Plan Insights",
+  "short_name": "STP Insights",
+  "start_url": "/client-insights/",
+  "display": "standalone",
+  "background_color": "#14161a",
+  "theme_color": "#C41E3A",
+  "icons": [
+    { "src": "/client-insights/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/client-insights/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

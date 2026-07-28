@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Scan The Plan — Atiku Abubakar's Plan for Nigeria</title>
+<meta name="description" content="Explore Atiku Abubakar's policy plan for Nigeria — sector by sector, zone by zone." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #C41E3A;
+    --ink: #14161a;
+    --muted: #5b6068;
+    --border: #e6e3df;
+    --cream: #faf8f5;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--ink);
+    background: var(--cream);
+  }
+  h1, h2, .brand {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.5px;
+  }
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 6vw;
+    border-bottom: 1px solid var(--border);
+  }
+  .brand { font-size: 28px; color: var(--red); }
+  nav a {
+    color: var(--ink);
+    text-decoration: none;
+    margin-left: 24px;
+    font-weight: 500;
+    font-size: 15px;
+  }
+  .hero {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    padding: 64px 6vw;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .hero-text { flex: 1.1; }
+  .hero-text h1 {
+    font-size: clamp(40px, 6vw, 72px);
+    line-height: 1.02;
+    margin: 0 0 20px;
+  }
+  .hero-text p {
+    font-size: 18px;
+    color: var(--muted);
+    line-height: 1.6;
+    max-width: 46ch;
+  }
+  .hero-img { flex: 0.9; }
+  .hero-img img {
+    width: 100%;
+    border-radius: 16px;
+    display: block;
+  }
+  .cta-row { margin-top: 32px; display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 999px;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 15px;
+  }
+  .btn-primary { background: var(--red); color: #fff; }
+  .btn-ghost { border: 1.5px solid var(--ink); color: var(--ink); }
+  .sectors {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 6vw 100px;
+  }
+  .sectors h2 { font-size: 34px; margin-bottom: 8px; }
+  .sectors p.lead { color: var(--muted); margin-bottom: 32px; max-width: 60ch; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+  }
+  .card {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    background: #fff;
+  }
+  .card h3 { margin: 0 0 6px; font-size: 18px; }
+  .card p { margin: 0; color: var(--muted); font-size: 14px; }
+  footer {
+    text-align: center;
+    padding: 32px;
+    color: var(--muted);
+    font-size: 13px;
+    border-top: 1px solid var(--border);
+  }
+  @media (max-width: 760px) {
+    .hero { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">SCAN THE PLAN</div>
+  <nav>
+    <a href="/delivers/">The Plan</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-text">
+    <h1>Get Nigeria<br/>Working Again.</h1>
+    <p>A sector-by-sector, zone-by-zone look at Atiku Abubakar's policy plan for Nigeria — the economy, security, infrastructure, and more.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="/delivers/">Explore The Plan</a>
+    </div>
+  </div>
+  <div class="hero-img">
+    <img src="/assets/images/atiku-running-mate.jpg" alt="Atiku Abubakar" />
+  </div>
+</section>
+
+<section class="sectors">
+  <h2>Ten sectors. One plan.</h2>
+  <p class="lead">Every commitment in this plan is organized by sector, so you can see exactly what's proposed for the issues you care about most.</p>
+  <div class="grid" id="sector-grid"></div>
+</section>
+
+<footer>
+  Scan The Plan · Policy information hub · Not an official campaign committee filing
+</footer>
+
+<script>
+const sectors = [
+  ["Economy & Jobs", "Diversification, MSMEs, job creation pathways."],
+  ["Infrastructure", "Transport, power, technology, housing."],
+  ["Human Capital", "Education and health system reform."],
+  ["Youth & Women", "Empowerment and inclusion programmes."],
+  ["Anti-Corruption", "Detection, sanction, institutional reform."],
+  ["National Security", "Restructured, decentralized security architecture."],
+  ["Governance", "Restructuring the polity, rule of law."],
+  ["International Relations", "Diaspora, trade, regional leadership."],
+  ["Environment", "Niger Delta, erosion, desert encroachment."],
+  ["Culture, Sports & Creative Industry", "Tourism, entertainment, Nollywood."],
+];
+document.getElementById('sector-grid').innerHTML = sectors.map(([t,d]) =>
+  `<div class="card"><h3>${t}</h3><p>${d}</p></div>`
+).join('');
+</script>
+
+</body>
+</html>

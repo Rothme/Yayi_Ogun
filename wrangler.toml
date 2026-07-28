@@ -1,0 +1,20 @@
+name = "atiku-delivers"
+compatibility_date = "2025-01-01"
+pages_build_output_dir = "."
+
+# KV namespace binding used by all /functions for QR stats, sessions, and
+# password hashes. Replace `id` with your real namespace ID after running:
+#   npx wrangler kv namespace create AD_CACHE
+# Local dev (`wrangler pages dev .`) will use a local emulated KV store
+# automatically even before you fill in a real id.
+[[kv_namespaces]]
+binding = "AD_CACHE"
+id = "1b2dc806a5cf4a009469a0c1bd42538c"
+
+# Optional dedicated namespace for QR analytics, kept separate from content
+# cache / auth data. If you don't create this, functions fall back to
+# AD_CACHE automatically — you can skip this block entirely if you prefer
+# one namespace for everything.
+# [[kv_namespaces]]
+# binding = "AD_QR_STATS"
+# id = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
