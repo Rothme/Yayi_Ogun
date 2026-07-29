@@ -3,37 +3,37 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Insights — Scan The Plan</title>
+<title>Insights — YAYI 2027</title>
 <link rel="manifest" href="/client-insights/manifest.json" />
 <style>
-  :root { --red:#C41E3A; --ink:#14161a; --muted:#5b6068; --border:#e6e3df; }
+  :root { --green:#0F7A3D; --greendark:#0B4D2C; --gold:#F2A900; --ink:#14161a; --muted:#5b6068; --border:#e6e3df; }
   * { box-sizing:border-box; }
   body { font-family:'DM Sans',system-ui,sans-serif; margin:0; background:#f5f4f2; color:var(--ink); }
   header { display:flex; justify-content:space-between; align-items:center; padding:20px 32px; background:#fff; border-bottom:1px solid var(--border); }
-  header h1 { font-size:18px; margin:0; }
+  header h1 { font-size:18px; margin:0; color:var(--greendark); }
   header button { background:none; border:1px solid var(--border); border-radius:8px; padding:8px 14px; cursor:pointer; font-size:13px; }
   main { max-width:900px; margin:0 auto; padding:32px; }
   .stat-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:16px; margin-bottom:32px; }
   .stat-card { background:#fff; border:1px solid var(--border); border-radius:12px; padding:20px; }
   .stat-card .label { color:var(--muted); font-size:13px; margin-bottom:6px; }
-  .stat-card .value { font-size:32px; font-weight:700; }
+  .stat-card .value { font-size:32px; font-weight:700; color:var(--green); }
   section { background:#fff; border:1px solid var(--border); border-radius:12px; padding:24px; margin-bottom:24px; }
-  section h2 { font-size:16px; margin:0 0 16px; }
+  section h2 { font-size:16px; margin:0 0 16px; color:var(--greendark); }
   table { width:100%; border-collapse:collapse; font-size:14px; }
   th, td { text-align:left; padding:8px 6px; border-bottom:1px solid var(--border); }
   th { color:var(--muted); font-weight:600; font-size:12px; text-transform:uppercase; }
   .chart-bar { display:flex; align-items:flex-end; gap:3px; height:100px; }
-  .chart-bar div { flex:1; background:var(--red); border-radius:2px 2px 0 0; min-height:2px; }
+  .chart-bar div { flex:1; background:var(--gold); border-radius:2px 2px 0 0; min-height:2px; }
   .change-pw { margin-top:8px; }
   input { padding:10px 12px; border-radius:8px; border:1px solid var(--border); font-size:14px; margin-right:8px; }
-  button.action { padding:10px 16px; border-radius:8px; border:none; background:var(--ink); color:#fff; font-weight:600; cursor:pointer; font-size:14px; }
+  button.action { padding:10px 16px; border-radius:8px; border:none; background:var(--greendark); color:#fff; font-weight:600; cursor:pointer; font-size:14px; }
   .msg { font-size:13px; margin-top:8px; }
 </style>
 </head>
 <body>
 
 <header>
-  <h1>Scan The Plan — QR Insights</h1>
+  <h1>YAYI 2027 — QR Insights</h1>
   <button id="logout">Log out</button>
 </header>
 
