@@ -9,7 +9,7 @@ pages_build_output_dir = "."
 # automatically even before you fill in a real id.
 [[kv_namespaces]]
 binding = "AD_CACHE"
-id = "1b2dc806a5cf4a009469a0c1bd42538c"
+id = "08d46b1e1a8f477bbef11e58dfc0433d"
 
 # Optional dedicated namespace for QR analytics, kept separate from content
 # cache / auth data. If you don't create this, functions fall back to
@@ -17,4 +17,4 @@ id = "1b2dc806a5cf4a009469a0c1bd42538c"
 # one namespace for everything.
 # [[kv_namespaces]]
 # binding = "AD_QR_STATS"
-# id = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
+# id = "08d46b1e1a8f477bbef11e58dfc0433d"
