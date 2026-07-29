@@ -1,8 +1,11 @@
 // functions/client-insights/_middleware.js
-// Intercepts every request under /client-insights/* before the matching
-// route/static file is served. Allows the login page itself through
-// unauthenticated; everything else requires a valid "client" or "admin"
-// session cookie.
+// Gates every request under /client-insights/*. Allows the login page and
+// static PWA assets through unauthenticated.
+//
+// IMPORTANT: Cloudflare Pages can serve login.html at the clean URL /login
+// (stripping .html), so both forms must be treated as public — otherwise a
+// mismatch here creates a redirect loop between "add .html" (our code) and
+// "strip .html" (Cloudflare's own URL canonicalization).
 
 const KV = (env) => env.AD_QR_STATS || env.AD_CACHE;
 
@@ -21,6 +24,7 @@ async function getSessionRole(request, env) {
 
 const PUBLIC_PATHS = [
   "/client-insights/login.html",
+  "/client-insights/login",
   "/client-insights/manifest.json",
   "/client-insights/service-worker.js",
   "/client-insights/icon-192.png",
@@ -40,6 +44,5 @@ export async function onRequest(context) {
     return next();
   }
 
-  // Not authenticated — send to the login page instead of serving content.
   return Response.redirect(new URL("/client-insights/login.html", request.url).toString(), 302);
 }

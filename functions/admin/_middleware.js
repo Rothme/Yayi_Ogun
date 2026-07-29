@@ -1,8 +1,13 @@
 // functions/admin/_middleware.js
-// Same pattern as client-insights: gates every request under /admin/*.
-// GET requests to protected pages redirect to the login page; non-GET
-// (API) requests to protected endpoints return 401 JSON instead, since
-// there's no page to redirect an API call to.
+// Gates every request under /admin/*. GET requests to protected pages
+// redirect to the login page; non-GET (API) requests to protected endpoints
+// return 401 JSON instead.
+//
+// IMPORTANT: Cloudflare Pages can serve /admin/login.html at the clean URL
+// /admin/login (stripping the .html), so both forms must be treated as the
+// public login page — otherwise a mismatch here creates a redirect loop
+// between "add .html" (our code) and "strip .html" (Cloudflare's own URL
+// canonicalization).
 
 const KV = (env) => env.AD_QR_STATS || env.AD_CACHE;
 
@@ -19,7 +24,7 @@ async function getSessionRole(request, env) {
   }
 }
 
-const PUBLIC_PATHS = ["/admin/login.html"];
+const PUBLIC_PATHS = ["/admin/login.html", "/admin/login"];
 
 export async function onRequest(context) {
   const { request, env, next } = context;
